@@ -196,7 +196,15 @@ form {
 
 .fa-unlock, .fa-lock {
     margin-right: 5%;
+    font-size: 1.3rem;
+    color: aliceblue;
 }
+
+#welcome{
+    color: aliceblue;
+    margin-top: 22px;
+}
+
 
 
 

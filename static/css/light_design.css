@@ -196,3 +196,12 @@ form {
 .card-form .new-name {
     max-width:100px;
 }
+
+.fa-unlock, .fa-lock {
+    margin-right: 5%;
+    font-size: 1.3rem;
+}
+
+#welcome{
+    margin-top: 22px;
+}
