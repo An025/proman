@@ -137,9 +137,8 @@ export let dom = {
         let title_to_enable_rename = event.target
         let form = title_to_enable_rename.parentNode.children[2];
         form.classList.remove('hide')
-        console.log(form)
         title_to_enable_rename.classList.add('hide')
-        let save = form.children[1]
+        let save = form.children[1];
         form.children[0].addEventListener('change', () => {
             let inputValue = form.children[0].value
             if (inputValue != '') {
