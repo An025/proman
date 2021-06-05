@@ -69,7 +69,7 @@ export let dom = {
         clone.querySelector('.board-column').setAttribute('order', status.order_id);
         clone.querySelector('.board-column').setAttribute('data-board-status-id', status.board_status_id);
         clone.querySelector('.board-column').setAttribute('draggable', 'true');
-        clone.querySelector('.board-column').addEventListener('dragstart', dom.dragging_status);
+        // clone.querySelector('.board-column').addEventListener('dragstart', dom.dragging_status);
 
         clone.querySelector('.board-column-title').id = `status-${status.id}`;
         clone.querySelector('.board-column-title').innerText = status.title;
@@ -135,8 +135,9 @@ export let dom = {
     },
     renameBoard: function (event) {
         let title_to_enable_rename = event.target
-        let form = title_to_enable_rename.parentNode.children[1];
+        let form = title_to_enable_rename.parentNode.children[2];
         form.classList.remove('hide')
+        console.log(form)
         title_to_enable_rename.classList.add('hide')
         let save = form.children[1]
         form.children[0].addEventListener('change', () => {
@@ -409,7 +410,8 @@ export let dom = {
         for (let drop_neighbour of droppables) {
             drop_neighbour.addEventListener('dragover', (event) => {
                 let dragged_element = document.querySelector('.dragging');
-                if (event.target.classList.contains('droppable') && event.target.classList.contains('card')) {
+                if (event.target.classList.contains('droppable')) {
+                // if (event.target.classList.contains('droppable') && event.target.classList.contains('card')) {
                     drop_neighbour.insertAdjacentElement('afterend', dragged_element);
                     dom.checkStatusEmpty()
                 }
